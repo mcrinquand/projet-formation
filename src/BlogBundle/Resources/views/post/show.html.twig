@@ -1,0 +1,20 @@
+{% extends 'BlogBundle::base.html.twig' %}
+
+{% block pre_content %}
+    <h2>{{ post.title }}</h2>
+{% endblock %}
+
+{% block content %}
+    {{ post.content|raw }}
+    <p>{{ post.createdAt|date('d-m-Y H:i:s') }}</p>
+    <p>{{ post.updatedAt|date('d-m-Y H:i:s') }}</p>
+
+    {% for comment in post.comments %}
+        {{ comment.content }}
+    {% endfor %}
+
+    <br />
+    <br />
+
+    <a href="{{ path('post_list') }}">Retourner à la liste des articles</a>
+{% endblock %}

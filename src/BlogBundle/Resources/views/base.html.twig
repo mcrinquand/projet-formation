@@ -1,0 +1,23 @@
+<html>
+    <head>
+        {% block stylesheet %}
+            <link type="text/css" href="">
+        {% endblock %}
+    </head>
+
+    <body>
+        <h1>Mon blog</h1>
+
+        {% block pre_content '' %}
+
+        {% block content %}
+            content de base
+        {% endblock %}
+        {% block post_content %}
+        {% endblock %}
+
+        {% block javascript %}
+            {# include js #}
+        {% endblock %}
+    </body>
+</html>

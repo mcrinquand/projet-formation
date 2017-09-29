@@ -1,0 +1,14 @@
+{% extends 'BlogBundle::base.html.twig' %}
+
+{% block pre_content %}
+    <h2>Articles du blog</h2>
+    <p>Voici la liste des articles</p>
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <h3>{{ post.title|upper }}</h3>
+        <p>{{ post.content|raw }}</p>
+        <a href="{{ path('post_show', {'id': post.id}) }}">Voir l'article</a>
+    {% endfor %}
+{% endblock %}

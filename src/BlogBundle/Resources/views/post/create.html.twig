@@ -1,0 +1,25 @@
+{% extends 'BlogBundle::base.html.twig' %}
+
+{% block pre_content %}
+    <h2>Création d'un article</h2>
+{% endblock %}
+
+{% block content %}
+    {{ form_start(my_form) }}
+
+    <table>
+        <tr><td>{{ form_label(my_form.title) }}</td><td>
+            {{ form_widget(my_form.title) }}</td></tr>
+        <tr><td>{{ form_label(my_form.content) }}</td><td>
+            {{ form_widget(my_form.content) }}</td></tr>
+        <tr><td>{{ form_label(my_form.createdAt) }}</td><td>
+            {{ form_widget(my_form.createdAt) }}</td></tr>
+        <tr><td>{{ form_label(my_form.updatedAt) }}</td><td>
+            {{ form_widget(my_form.updatedAt) }}</td></tr>
+        <tr><td></td><td>
+            {{ form_widget(my_form.Ajouter) }}</td></tr>
+    </table>
+    {{ form_end(my_form) }}
+
+    <a href="{{ path('post_list') }}">Retourner à la liste des articles</a>
+{% endblock %}
